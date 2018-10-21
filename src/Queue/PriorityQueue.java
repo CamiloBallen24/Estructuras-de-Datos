@@ -5,11 +5,9 @@
  */
 package Queue;
 
-
 /**
  *
- * @author juan.castro
- * @param <T>
+ * @author cgilb
  */
 public interface PriorityQueue<T> {
     

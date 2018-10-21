@@ -7,7 +7,7 @@ package Recursivas;
 
 /**
  *
- * @author jccas
+ * @author cgilb
  */
 public class MainClass2 {
     

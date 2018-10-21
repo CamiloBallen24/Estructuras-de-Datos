@@ -1,7 +1,11 @@
 package List;
 
 import java.util.Iterator;
-
+/**
+ *
+ * @author cgilb
+ * @param <T>
+ */
 public class MyArrayList<T extends Comparable> extends AbstractList<T> {
     
     T[] elementData;

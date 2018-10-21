@@ -1,7 +1,11 @@
 package List;
 
 import java.util.Iterator;
-
+/**
+ *
+ * @author cgilb
+ * @param <T>
+ */
 public class IntegerArrayList {
 
     private int size;

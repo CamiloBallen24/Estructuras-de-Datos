@@ -5,10 +5,9 @@
  */
 package Queue;
 
-
 /**
  *
- * @author juan.castro
+ * @author cgilb
  */
 public class MyArrayQueue<T> implements Queue<T> {
 

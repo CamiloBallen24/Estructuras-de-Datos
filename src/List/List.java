@@ -7,7 +7,7 @@ package List;
 
 /**
  *
- * @author jccas
+ * @author cgilb
  * @param <T>
  */
 public interface List<T> {

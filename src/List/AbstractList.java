@@ -7,7 +7,7 @@ package List;
 
 /**
  *
- * @author jccas
+ * @author cgilb
  * @param <T>
  */
 public abstract class AbstractList<T extends Comparable> implements List<T> {

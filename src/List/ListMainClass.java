@@ -10,7 +10,8 @@ import java.util.Iterator;
 
 /**
  *
- * @author jccas
+ * @author cgilb
+ * @param <T>
  */
 public class ListMainClass {
 

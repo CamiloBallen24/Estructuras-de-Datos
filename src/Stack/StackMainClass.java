@@ -7,7 +7,7 @@ package Stack;
 
 /**
  *
- * @author jccas
+ * @author cgilb
  */
 public class StackMainClass {
     

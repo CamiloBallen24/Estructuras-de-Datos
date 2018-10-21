@@ -7,8 +7,7 @@ package Stack;
 
 /**
  *
- * @author jccas
- * @param <T>
+ * @author cgilb
  */
 public interface Stack<T> {
     

@@ -7,7 +7,7 @@ package Stack;
 
 /**
  *
- * @author juan.castro
+ * @author cgilb
  */
 public class StackNode<T> {
     

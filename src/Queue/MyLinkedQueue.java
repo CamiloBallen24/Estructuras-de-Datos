@@ -8,7 +8,7 @@ package Queue;
 
 /**
  *
- * @author juan.castro
+ * @author cgilb
  */
 public class MyLinkedQueue<T> implements Queue<T> {
     

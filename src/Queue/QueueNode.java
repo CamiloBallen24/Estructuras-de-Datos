@@ -7,7 +7,8 @@ package Queue;
 
 /**
  *
- * @author juan.castro
+ * @author cgilb
+ * @param <T>
  */
 public class QueueNode<T> {
     

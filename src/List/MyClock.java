@@ -7,7 +7,8 @@ package List;
 
 /**
  *
- * @author juan.castro
+ * @author cgilb
+ * @param <T>
  */
 public class MyClock implements Comparable<MyClock> {
     

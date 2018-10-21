@@ -7,7 +7,7 @@ package List;
 
 /**
  *
- * @author jccas
+ * @author cgilb
  * @param <T>
  */
 public class MyLinkedList<T extends Comparable> extends AbstractList<T> {

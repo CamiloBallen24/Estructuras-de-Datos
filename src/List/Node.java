@@ -7,7 +7,7 @@ package List;
 
 /**
  *
- * @author jccas
+ * @author cgilb
  * @param <T>
  */
 public class Node<T> {
