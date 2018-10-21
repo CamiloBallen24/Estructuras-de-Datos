@@ -5,8 +5,9 @@
  */
 package BST;
 /**
- *
- * @author jccas
+
+ * @author: Camilo Andres Gil Ballen
+
  */
 public class MyBinarySearchTree<T extends Comparable> {
     

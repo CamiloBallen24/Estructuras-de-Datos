@@ -6,8 +6,9 @@
 package BST;
 
 /**
- *
- * @author jccas
+
+ * @author: Camilo Andres Gil Ballen
+
  */
 public class MyBinaryNode<T> {
     
