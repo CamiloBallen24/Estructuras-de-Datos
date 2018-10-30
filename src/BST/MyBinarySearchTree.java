@@ -146,7 +146,7 @@ public class MyBinarySearchTree<T extends Comparable> {
         }
     }
 
-    public int height(MyBinaryNode head) {
+    private int height(MyBinaryNode head) {
         if (head == null) {
             return 0;
         }
@@ -162,4 +162,18 @@ public class MyBinarySearchTree<T extends Comparable> {
         }
     }
     
+    //HEIGHT MEJORADO
+    public int height02(){
+        return height02(root);
+    }
+    
+    private int height02(MyBinaryNode head){
+        if(head == null){
+            return -1;
+        }
+        else{
+            return 1 + Integer.max(height02(head.getLeft()), height02(head.getRight()));
+        }
+    }
+        
 }
