@@ -137,4 +137,29 @@ public class MyBinarySearchTree<T extends Comparable> {
         
     }
     
+    //FUNCION HEIGHT
+    public int height() {
+        if (this.root == null) {
+            return -1;
+        } else {
+            return height(root) - 1;
+        }
+    }
+
+    public int height(MyBinaryNode head) {
+        if (head == null) {
+            return 0;
+        }
+        else{
+            int heightLeft = height(head.getLeft()); 
+            int heightRight = height(head.getRight()); 
+            if(heightLeft>heightRight){
+                return heightLeft+1;
+            }
+            else{
+                return heightRight+1;
+            }
+        }
+    }
+    
 }
