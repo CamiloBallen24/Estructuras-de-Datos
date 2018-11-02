@@ -190,7 +190,7 @@ public class AvlTree<T extends Comparable> {
         k2.setLeft(k1);
         k2.setHeight(Math.max(height(k2.getLeft()), height(k2.getRight())) + 1);
         k1.setHeight(Math.max(height(k1.getLeft()), height(k1.getRight())) + 1);
-        return k2;
+        return k2;  
     }
     
     /*Rotacion Left-Right(CASO II). Se Llama Rotacion Doble con el hijo Izquierdo, 
@@ -211,7 +211,7 @@ public class AvlTree<T extends Comparable> {
         return rotateWithRightChild(k1);
     }
 
-    //Imprimir el Arbol
+    //Imprimir el Arbol -- Auxiliar para visualizar el comportamiento del arbol
     public void print() {
         print(this.root, "");
     }

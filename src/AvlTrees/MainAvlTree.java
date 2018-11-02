@@ -8,6 +8,7 @@ public class MainAvlTree {
     public static void main(String[] args) {
         AvlTree<Integer> myAvlTree = new AvlTree<>();
         
+        
         myAvlTree.insert(50);
         System.out.println("Inserta 50");
         myAvlTree.print();
