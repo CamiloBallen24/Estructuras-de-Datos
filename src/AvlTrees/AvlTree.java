@@ -91,7 +91,6 @@ public class AvlTree<T extends Comparable> {
         this.root = insert(element, this.root);
     }
 
-    
     private AvlNode<T> insert(T element, AvlNode<T> node) {
         if (node == null) {
             return new AvlNode<>(element, null, null);
@@ -102,8 +101,7 @@ public class AvlTree<T extends Comparable> {
             node.setLeft(insert(element, node.getLeft()));
         } else if (compareResult > 0) {
             node.setRight(insert(element, node.getRight()));
-        } else {;
-        }//Ya esta
+        } else {;}//Ya esta
 
         return balance(node);
     }
@@ -143,32 +141,37 @@ public class AvlTree<T extends Comparable> {
         
     }
     
-    //Balanceo a la Hora de agregar
+    //BALANCEO DEL ARBOL
     private AvlNode<T> balance(AvlNode<T> node) {
-       
         if (node == null) {
             return null;
         }
+        //Revisamos si la parte izquierda del arbol esta desbalanceado
         if (height(node.getLeft()) - height(node.getRight()) > 1) {
-            if (height(node.getLeft().getLeft()) >= height(node.getLeft().getRight())) {
-                node = rotateWithLeftChild(node);
+            //Revisamos si debemos realizar una rotacion simple o una doble
+            if (height(node.getLeft().getLeft()) >= height(node.getLeft().getRight())) { 
+                node = rotateWithLeftChild(node); //Realizamos una rotacion simple a la derecha, CASO I
             } else {
-                node = doubleWithLeftChild(node);
+                node = doubleWithLeftChild(node); //Realizamos una rotacion doble, CASO II
             }
         } else {
+            //Revisamos si la parte derecha del arbol esta desbalanceado
             if (height(node.getRight()) - height(node.getLeft()) > 1) {
+                //Revisamos si debemos realizar una rotacion simple o una doble
                 if (height(node.getRight().getRight()) >= height(node.getRight().getLeft())) {
-                    node = rotateWithRightChild(node);
+                    node = rotateWithRightChild(node);//Realizamos una rotacion simple a la izquierda, CASO IV
                 } else {
-                    node = doubleWithRigtChild(node);
+                    node = doubleWithRigtChild(node); //Realizamos una rotacion doble, CASO III
                 }
             }
         }
-        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1);
-        return node;
+        node.setHeight(Math.max(height(node.getLeft()), height(node.getRight())) + 1); //Modificamos la altura del nodo
+        return node; //Devolvemos el node balanceao
     }
 
-    //Rotacion a la derecha Simple
+    /*Rotacion a la derecha Simple (CASO I), recibe el nombre de rotacion con el hijo izquierdo. 
+      Ya que desde otra interpretacion, el hijo izquierdo pasara a ser la raiz, y la antigua
+      raiz, pasara a ser el hijo derecho, de la nueva raiz */
     private AvlNode<T> rotateWithLeftChild(AvlNode<T> k2) {
         AvlNode<T> k1 = k2.getLeft();
         k2.setLeft(k1.getRight());
@@ -178,7 +181,9 @@ public class AvlTree<T extends Comparable> {
         return k1;
     }
 
-    //Rotacion a la Izquierda Simple
+    /*Rotacion a la izquierda Simple (CASO IV), recibe el nombre de rotacion con el hijo derecho. 
+      Ya que desde otra interpretacion, el hijo derecho pasara a ser la raiz, y la antigua
+      raiz, pasara a ser el hijo izquierdo, de la nueva raiz */
     private AvlNode<T> rotateWithRightChild(AvlNode<T> k1) {
         AvlNode<T> k2 = k1.getRight();
         k1.setRight(k2.getLeft());
@@ -188,13 +193,19 @@ public class AvlTree<T extends Comparable> {
         return k2;
     }
 
-    //Rotacion a la Derecha Doble
+    /*Rotacion Left-Right(CASO II). Se Llama Rotacion Doble con el hijo Izquierdo, 
+      ya que luego de realizar la primera rotacion, La nueva raiz, sera el hijo izquierdo, 
+      y la antigua raiz pasara a ser el hijo derecho de la nueva raiz
+    */
     private AvlNode<T> doubleWithLeftChild(AvlNode<T> k3) {
         k3.setLeft(rotateWithRightChild(k3.getLeft()));
         return rotateWithLeftChild(k3);
     }
 
-    //Rotacion a la Izquierda Doble
+    /*Rotacion Right-Left(CASO III). Se Llama Rotacion Doble con el hijo Derecho, 
+      ya que luego de realizar la primera rotacion, La nueva raiz, sera el hijo derecho, 
+      y la antigua raiz pasara a ser el hijo izquierdo de la nueva raiz
+    */
     private AvlNode<T> doubleWithRigtChild(AvlNode<T> k1) {
         k1.setRight(rotateWithLeftChild(k1.getRight()));
         return rotateWithRightChild(k1);
