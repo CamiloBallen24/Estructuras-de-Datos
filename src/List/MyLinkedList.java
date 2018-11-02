@@ -132,9 +132,12 @@ public class MyLinkedList<T extends Comparable> extends AbstractList<T> {
     {
         System.out.print("(");
         for (int i = 0; i < size; i++) {
-            System.out.print(get(i).toString() + ",  ");            
             if(i==size-1){
                 System.out.print(get(i).toString());            
+            }
+            
+            else{
+                System.out.print(get(i).toString() + ",  "); 
             }
         }
         System.out.print(")");
