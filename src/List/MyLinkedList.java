@@ -75,6 +75,8 @@ public class MyLinkedList<T extends Comparable> extends AbstractList<T> {
     @Override
     public T remove(int index) {
         Node<T> removeNode = getNode(index);
+        if(index == -1){return null;}
+        
         if(index == 0)
         {
             root = removeNode.getNext();
@@ -88,11 +90,55 @@ public class MyLinkedList<T extends Comparable> extends AbstractList<T> {
         size--;
         return removeNode.getElement();
     }
+    
+    //Elimina un elemento en caso de estar contenido
+    public T remove(T element){
+        return remove(index(element));
+    }
 
     @Override
     public void clear() {
         root = null;
         size = 0;
     }
+    
+    //Regresa el index de un elemento en caso de estar contenido
+    public int index(T element){
+        Node<T> aux = root;
+        int i=0;
+        while(aux != null){
+            if( (element.compareTo(aux.getElement())) == 0)
+                return i;
+            aux = aux.getNext();
+            i++;
+        }
+        return -1;
+    }
+    
+    public boolean contains(T element){
+        Node<T> aux = root;
+        while(aux != null){
+            if( (element.compareTo(aux.getElement())) == 0){
+                return true;
+            }
+            aux = aux.getNext();
+            
+        }
+        return false;
+    }
+    
+   @Override
+    public void print()
+    {
+        System.out.print("(");
+        for (int i = 0; i < size; i++) {
+            System.out.print(get(i).toString() + ",  ");            
+            if(i==size-1){
+                System.out.print(get(i).toString());            
+            }
+        }
+        System.out.print(")");
+    }
+
     
 }

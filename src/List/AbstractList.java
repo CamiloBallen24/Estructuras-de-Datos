@@ -45,9 +45,14 @@ public abstract class AbstractList<T extends Comparable> implements List<T> {
     @Override
     public void print()
     {
+        System.out.print("(");
         for (int i = 0; i < size; i++) {
-            System.out.println(get(i).toString());            
+            System.out.print(get(i).toString() + ",  ");            
+            if(i==size-1){
+                System.out.print(get(i).toString());            
+            }
         }
+        System.out.print(")");
     }
 
     @Override
