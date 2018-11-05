@@ -211,6 +211,7 @@ public class AvlTree<T extends Comparable> {
         print(this.root, "");
     }
 
+    
     private void print(AvlNode<T> node, String space) {
         if (node != null) {
             System.out.println(space + node.getElement() + ")");
