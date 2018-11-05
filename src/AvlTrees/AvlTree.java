@@ -175,6 +175,13 @@ public class AvlTree<T extends Comparable> {
         k1.setHeight(Math.max(height(k1.getLeft()), height(k1.getRight())) + 1);
         return k1;
     }
+    
+    private AvlNode<T> rotacionSimpleDerecha(AvlNode<T> head){
+        AvlNode<T> newHead = head.getLeft();
+        head.setLeft(newHead.getRight());
+        newHead.setRight(head);
+        return newHead;
+    }
 
     /*Rotacion a la izquierda Simple (CASO IV), recibe el nombre de rotacion con el hijo derecho. 
       Ya que desde otra interpretacion, el hijo derecho pasara a ser la raiz, y la antigua
