@@ -176,7 +176,7 @@ public class AvlTree<T extends Comparable> {
         return k1;
     }
     
-    private AvlNode<T> rotacionSimpleDerecha(AvlNode<T> head){
+    private AvlNode<T> rotationSimpleRight(AvlNode<T> head){
         AvlNode<T> newHead = head.getLeft();
         head.setLeft(newHead.getRight());
         newHead.setRight(head);
@@ -196,7 +196,7 @@ public class AvlTree<T extends Comparable> {
         return k2;  
     }
     
-    private AvlNode<T> rotacionSimpleIzquierda(AvlNode<T> head){
+    private AvlNode<T> rotationSimpleLeft(AvlNode<T> head){
         AvlNode<T> newHead = head.getRight();
         head.setRight(newHead.getLeft());
         newHead.setLeft(head);
@@ -215,6 +215,13 @@ public class AvlTree<T extends Comparable> {
         return rotateWithLeftChild(k3);
     }
 
+    
+    private AvlNode<T> rotationDoubleLeftRight(AvlNode<T> head){
+        head.setLeft(rotationSimpleLeft(head.getLeft()));
+        return rotationSimpleRight(head);
+    }
+    
+    
     /*Rotacion Right-Left(CASO III). Se Llama Rotacion Doble con el hijo Derecho, 
       ya que luego de realizar la primera rotacion, La nueva raiz, sera el hijo derecho, 
       y la antigua raiz pasara a ser el hijo izquierdo de la nueva raiz
