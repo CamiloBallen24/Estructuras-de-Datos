@@ -183,6 +183,7 @@ public class AvlTree<T extends Comparable> {
         return newHead;
     }
 
+    
     /*Rotacion a la izquierda Simple (CASO IV), recibe el nombre de rotacion con el hijo derecho. 
       Ya que desde otra interpretacion, el hijo derecho pasara a ser la raiz, y la antigua
       raiz, pasara a ser el hijo izquierdo, de la nueva raiz */
@@ -194,6 +195,16 @@ public class AvlTree<T extends Comparable> {
         k1.setHeight(Math.max(height(k1.getLeft()), height(k1.getRight())) + 1);
         return k2;  
     }
+    
+    private AvlNode<T> rotacionSimpleIzquierda(AvlNode<T> head){
+        AvlNode<T> newHead = head.getRight();
+        head.setRight(newHead.getLeft());
+        newHead.setLeft(head);
+        return newHead;
+    }
+    
+    
+    
     
     /*Rotacion Left-Right(CASO II). Se Llama Rotacion Doble con el hijo Izquierdo, 
       ya que luego de realizar la primera rotacion, La nueva raiz, sera el hijo izquierdo, 
