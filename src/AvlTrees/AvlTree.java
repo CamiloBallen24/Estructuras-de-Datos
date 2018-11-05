@@ -109,12 +109,7 @@ public class AvlTree<T extends Comparable> {
     
     //Eliminar
     public  void remove(T element){
-        if((element == root.getElement()) && ((root.getLeft() == null)||(root.getRight() == null))){
-            root = remove(element, root);
-        }
-        else{
-            remove(element, root);
-        }
+        root = remove(element, root);
     }
     
      
