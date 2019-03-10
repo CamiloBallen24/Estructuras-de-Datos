@@ -89,5 +89,12 @@ public class BinaryHeap<T extends Comparable> {
         }
         array[hole] = tmp;
     }
+    
+    void printHeap() {
+        for (int i = 1; i <= size; i++) {
+            System.out.print(array[i] + " | ");
+        }
+        System.out.println("");
+    }
 
 }

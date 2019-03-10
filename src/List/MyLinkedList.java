@@ -91,15 +91,17 @@ public class MyLinkedList<T extends Comparable> extends AbstractList<T> {
         return removeNode.getElement();
     }
     
-    //Elimina un elemento en caso de estar contenido
-    public T remove(T element){
-        return remove(index(element));
-    }
+    
 
     @Override
     public void clear() {
         root = null;
         size = 0;
+    }
+    
+    //Elimina un elemento en caso de estar contenido
+    public T remove(T element){
+        return remove(index(element));
     }
     
     //Regresa el index de un elemento en caso de estar contenido
